@@ -10,8 +10,8 @@ java外卖业务项目学习
 ## Nginx
 
 - 反向代理配置
-- 负载均衡：
-权重，ip哈希，最少连接，url哈希，响应时间
+- 负载均衡： 
+- 权重，ip哈希，最少连接，url哈希，响应时间
 
 
 ## 登录密码加密
@@ -26,6 +26,10 @@ java外卖业务项目学习
 
 ## Swagger
 
+- ### 属性配置类 @ConfigurationProperties(perfix = xx.xxx)
+- 属性配置类 加这个注解可以将application.yml文件里的配置读取并写java类里
+- application文件可以引用a-dev.yml a-prod.yml 使用\${}传递值
+- 
 - knife4j 生成接口文档
 - 常用注解：@Api @ApiModel @ApiModelProperty @ApiOperation
 - 在doc.html 进行调试，添加全局参数token
@@ -47,4 +51,15 @@ java外卖业务项目学习
 - common类里已经写好了一个对象转换器 这个转换器实现了几个序列化和反序列化 将几个时间格式给转换了 
 - 将自己写的转换器加入容器中 
 - 消息转换器是有顺序的，新添加的在最后 index为0表示放第一位
-- 
+
+## 用AOP切面来完成 公共字段的填充
+
+- 自定义注解 AutoFill 标识公共字段填充方法
+- 注解AutoFill 加@Target(ElementType.METHOD) 表明af添加在方法上
+- 枚举操作类型 OperationType类 只有UPDATE 和 INSERT
+- ### 自定义切面类AutoFillAspect 
+- 切入点匹配Mapper包下所有的类 所有方法 所有返回值类型
+- @Pointcut("execution(* com.sky.mapper.*.*(..)) && @annotation(com.sky.annotation.AutoFill)")
+- \&& 后边的表示需要匹配到添加了这个注解的方法
+- 前置通知
+- 获取当前被拦截方法的参数--实体对象
