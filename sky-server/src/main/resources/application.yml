@@ -13,6 +13,13 @@ spring:
       username: ${sky.datasource.username}
       password: ${sky.datasource.password}
 
+  redis:
+    host: ${sky.redis.host}
+    port: ${sky.redis.port}
+    password: ${sky.redis.password}
+    database: ${sky.redis.database}
+
+
 mybatis:
   #mapper配置文件
   mapper-locations: classpath:mapper/*.xml
@@ -39,7 +46,7 @@ sky:
     admin-token-name: token
 
   alioss:
-    endpoint:
-    access-key-id:
-    access-key-secret:
-    bucket-name:
+    endpoint: ${sky.alioss.endpoint}
+    access-key-id: ${sky.alioss.access-key-id}
+    access-key-secret: ${sky.alioss.access-key-secret}
+    bucket-name: ${sky.alioss.bucket-name}

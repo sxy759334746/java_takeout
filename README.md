@@ -14,6 +14,15 @@ java外卖业务项目学习
 - 权重，ip哈希，最少连接，url哈希，响应时间
 
 
+## Redis
+
+- redis中的数据类型：字符串string 哈希hash 列表list 集合set 有序集合sorted set/zset
+- spring-data-redis
+- 导入maven坐标， 配置redis数据源， 写配置类创建RedisTemplate对象，通过RT操作Redis
+
+- ## 字符串操作命令
+- 
+
 ## 登录密码加密
 
 - 返回password MD5加密
@@ -34,6 +43,7 @@ java外卖业务项目学习
 - 常用注解：@Api @ApiModel @ApiModelProperty @ApiOperation
 - 在doc.html 进行调试，添加全局参数token
 
+
 ## 员工数据CURD
 
 - 全局异常处理
@@ -52,6 +62,7 @@ java外卖业务项目学习
 - 将自己写的转换器加入容器中 
 - 消息转换器是有顺序的，新添加的在最后 index为0表示放第一位
 
+
 ## 用AOP切面来完成 公共字段的填充
 
 - 自定义注解 AutoFill 标识公共字段填充方法
@@ -63,3 +74,17 @@ java外卖业务项目学习
 - \&& 后边的表示需要匹配到添加了这个注解的方法
 - 前置通知
 - 获取当前被拦截方法的参数--实体对象
+
+
+## 阿里云oss对象存储
+
+- 
+- ConditionalOnMissingBean 只存在一个此类bean
+
+
+## 菜品以及分类CURD
+
+- @RequestParam注解 将接收到的参数列表封装到 被注解的集合中
+
+
+
