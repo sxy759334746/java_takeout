@@ -87,4 +87,19 @@ java外卖业务项目学习
 - @RequestParam注解 将接收到的参数列表封装到 被注解的集合中
 
 
+## 设置店铺状态以及接入小程序
 
+- RequestController()设置名字区分不同包下的同名controller类
+- 
+
+
+## HttpClient
+
+- 导入maven坐标
+- 核心api： HttpClient HttpClients CloseableHttpClient HttpGet HttpPost
+- CloseableHttpClient HttpGet CloseableHttpResponse getStatusLine().getStatus() getEntity()
+
+## 微信登录
+
+- wx.login()获取code wx.request()发送code到后端
+- 后端服务 调用微信接口服务 HttpClient请求 appid secret js_code grant_type
