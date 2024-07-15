@@ -17,19 +17,8 @@ java外卖业务项目学习
 
 - redis中的数据类型：字符串string 哈希hash 列表list 集合set 有序集合sorted set/zset
 - spring-data-redis
-- 导入maven坐标， 配置redis数据源， 写配置类创建RedisTemplate对象，通过RT操作Redis
-
-- ## 字符串操作命令
-- 
-
-## 登录密码加密
-
-- 返回password MD5加密
-
-
-## apifox
-
-- 导入接口文档
+- 导入maven坐标， 配置redis数据源， 写配置类创建RedisTemplate对象，通过RT操作Redis 
+- 字符串操作命令 opsForValue()...
 
 
 ## Swagger
@@ -37,7 +26,6 @@ java外卖业务项目学习
 - ### 属性配置类 @ConfigurationProperties(perfix = xx.xxx)
 - 属性配置类 加这个注解可以将application.yml文件里的配置读取并写java类里
 - application文件可以引用a-dev.yml a-prod.yml 使用\${}传递值
-- 
 - knife4j 生成接口文档
 - 常用注解：@Api @ApiModel @ApiModelProperty @ApiOperation
 - 在doc.html 进行调试，添加全局参数token
@@ -73,6 +61,16 @@ java外卖业务项目学习
 - \&& 后边的表示需要匹配到添加了这个注解的方法
 - 前置通知
 - 获取当前被拦截方法的参数--实体对象
+
+
+## 登录密码加密
+
+- 返回password MD5加密
+
+
+## apifox
+
+- 导入接口文档
 
 
 ## 阿里云oss对象存储
