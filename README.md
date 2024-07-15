@@ -2,10 +2,9 @@
 
 java外卖业务项目学习
 
-使用SpringBoot Redis MyBatis MySQL Nginx SpringTask Swagger JWT 
-
-前端微信小程序
-
+- 使用SpringBoot Redis MyBatis MySQL SpringCache WebSocket Nginx SpringTask Swagger JWT 
+- 前端微信小程序
+- 具体实现见commit
 
 ## Nginx
 
@@ -44,7 +43,7 @@ java外卖业务项目学习
 - 在doc.html 进行调试，添加全局参数token
 
 
-## 员工数据CURD
+## 员工数据CRUD
 
 - 全局异常处理
 - jwt获取当前登录用户id
@@ -78,11 +77,10 @@ java外卖业务项目学习
 
 ## 阿里云oss对象存储
 
-- 
 - ConditionalOnMissingBean 只存在一个此类bean
 
 
-## 菜品以及分类CURD
+## 菜品以及分类CRUD
 
 - @RequestParam注解 将接收到的参数列表封装到 被注解的集合中
 
@@ -90,16 +88,42 @@ java外卖业务项目学习
 ## 设置店铺状态以及接入小程序
 
 - RequestController()设置名字区分不同包下的同名controller类
-- 
 
 
 ## HttpClient
 
 - 导入maven坐标
-- 核心api： HttpClient HttpClients CloseableHttpClient HttpGet HttpPost
+HttpClient HttpClients CloseableHttpClient HttpGet HttpPost
 - CloseableHttpClient HttpGet CloseableHttpResponse getStatusLine().getStatus() getEntity()
+
 
 ## 微信登录
 
 - wx.login()获取code wx.request()发送code到后端
 - 后端服务 调用微信接口服务 HttpClient请求 appid secret js_code grant_type
+
+
+## Spring Cache 缓存
+
+- SpringCache可以使用EHChche Caffeine Redis 通过maven坐标配置
+- @EnableCaching 启动类注解开启缓存注解功能
+- @Cacheable 方法执行前先查缓存，有则返回，没有则返回值放到缓存中
+- @CachePut 将方法返回值放缓存中
+- @CacheEvict 删除一条或多条缓存
+
+
+## 用户购物车，下单，地址本CRUD
+
+
+## 微信支付
+
+- JSAPI 
+- SpringTask任务调度
+- coplar内网穿透 用来微信向后端推送支付结果请求
+
+
+## SpringTask
+
+- cron表达式 每个域的含义分别为：秒、分钟、小时、日、月、周、年(可选)
+- @EnableScheduling 启动类加注解开启任务调度
+- @Scheduled(cron = "  ")
