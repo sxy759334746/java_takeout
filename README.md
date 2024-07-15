@@ -34,8 +34,10 @@ java外卖业务项目学习
 ## 员工数据CRUD
 
 - 全局异常处理
-- jwt获取当前登录用户id
-- ThreadLocal set() get() remove()
+- ### jwt登录校验
+- JwtProperties 封装jwt生成需要的属性 SecretKey Ttl
+- 登录时候生成jwt令牌 后续请求由拦截器解析校验 JwtUtil.createJWT JwtUtil.parseJWT
+- 使用ThreadLocal存取员工id  set() get() remove()
 - ### 员工分页查询 
 - 用到mybatis的pagehelpers  pom中添加依赖
 - PageHelper.startPage() 添加page和pagesize参数
@@ -71,10 +73,11 @@ java外卖业务项目学习
 ## apifox
 
 - 导入接口文档
-
+- 调试加全局参数token
 
 ## 阿里云oss对象存储
 
+- 配置yml文件 application-dev版本 application.yml调用${}
 - ConditionalOnMissingBean 只存在一个此类bean
 
 
@@ -125,3 +128,21 @@ HttpClient HttpClients CloseableHttpClient HttpGet HttpPost
 - cron表达式 每个域的含义分别为：秒、分钟、小时、日、月、周、年(可选)
 - @EnableScheduling 启动类加注解开启任务调度
 - @Scheduled(cron = "  ")
+
+
+## 百度地图API校验配送距离
+
+- application.yml配置ak和地址
+- @Values 得到配置文件值
+- HttpClient向API发送请求
+- 解析json
+
+
+## WebSocket
+
+- 导入WebSocket的maven坐标
+- 导入WebSocket服务端组件WebSocketServer，用于和客户端通信
+- 导入配置类WebSocketConfiguration，注册WebSocket的服务端组件
+- 导入定时任务类WebSocketTask，定时向客户端推送数据
+- onOpen onMessage onClose sendToAllClient
+- 配置类内 ServerEndpointExporter方法，添加Bean注解 然后return new ServerEndpointExporter();

@@ -38,10 +38,12 @@
         order by order_time desc
     </select>
 
-    <update id="update">
+    <update id="update" parameterType="Orders">
         update orders
         <set>
-            <if test="status != null">status = #{status}</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="cancel_reason != null">cancel_reason = #{cancelReason},</if>
+            <if test="cancel_time != null">cancel_time = #{cancelTime}</if>
         </set>
         where id = #{id}
     </update>
